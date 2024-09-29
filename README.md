@@ -15,7 +15,13 @@ This project provides a meme generator tool using both a command-line interface 
     git clone https://github.com/justinkumpe/Meme_Generator_Python.git
     ```
 
-2. Install the required dependencies:
+2. Navigate to src directory
+
+    ```bash
+    cd src
+    ```
+
+3. Install the required dependencies:
 
     ```bash
     pip install -r requirements.txt
@@ -34,13 +40,13 @@ Run the `meme.py` script from the terminal with the following optional arguments
 Example usage:
 
 ```bash
-python3 src/meme.py --body "Quote Body" --author "Author of Quote" --path "image.jpg"
+python3 meme.py --body "Quote Body" --author "Author of Quote" --path "image.jpg"
 ```
 
 ### Command Line Interface (CLI) 
 1. Run the `app.py`
     ```bash
-    python src/app.py
+    python app.py
     ```
 
 2. Open browser with link http://127.0.0.1:5000/
