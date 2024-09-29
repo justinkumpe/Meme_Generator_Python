@@ -34,7 +34,7 @@ Run the `meme.py` script from the terminal with the following optional arguments
 Example usage:
 
 ```bash
-python3 src/meme.py --body "Ask not what your country can do for you – ask what you can do for your country." --author "JFK" --path "image.jpg"
+python3 src/meme.py --body "Quote Body" --author "Author of Quote" --path "image.jpg"
 ```
 
 ### Command Line Interface (CLI) 
