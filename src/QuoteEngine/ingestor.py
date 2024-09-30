@@ -1,5 +1,4 @@
-"""Ingestor"""
-
+"""Ingestor."""
 from .ingestor_interface import IngestorInterface
 from .csv_ingestor import CSVIngestor
 from .docx_ingestor import DocxIngestor
@@ -8,13 +7,13 @@ from .text_ingestor import TextIngestor
 
 
 class Ingestor(IngestorInterface):
-    """Ingestor Class"""
+    """Ingestor Class."""
 
     allow_extensions = [".csv", ".docx", ".pdf", ".txt"]
 
     @classmethod
     def parse(cls, path: str):
-        """Parse file by path
+        """Parse file by path.
 
         Args:
             path (str): File path
@@ -22,7 +21,6 @@ class Ingestor(IngestorInterface):
         Returns:
             list: List of quotes
         """
-
         if not cls.can_ingest(path):
             raise ValueError("Unsupported file extension:")
 

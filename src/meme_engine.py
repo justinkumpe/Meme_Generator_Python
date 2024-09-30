@@ -1,20 +1,19 @@
-"""Meme Engine"""
-
+"""Meme Engine."""
 import os
 import random
+import textwrap
 from PIL import Image, ImageFont, ImageDraw
 
 
 class MemeEngine():
-    """Meme Engine class"""
+    """Meme Engine class."""
 
     def __init__(self, path):
-        """Initialize meme engine with path
+        """Initialize meme engine with path.
 
         Args:
             path (str): path of image after generate
         """
-
         self.folder_dir = path
         if not os.path.exists(path):
             os.makedirs(path)
@@ -31,7 +30,6 @@ class MemeEngine():
         Returns:
             str: out_file_path
         """
-
         out_file_path = os.path.join(
             self.folder_dir, f"meme-{random.randint(0,1000000)}.jpg"
         )
@@ -52,11 +50,11 @@ class MemeEngine():
 
                 x_loc = random.randint(0, int(img.width / 8))
                 y_loc = random.randint(0, int(img.height - font_size * 5))
+                wrapper = textwrap.TextWrapper(width=40) 
+                wrapped_text = wrapper.fill(text=text)
+                full_text = f"{wrapped_text}\n-{author}"
+                draw.text((x_loc, y_loc), full_text, font=font, fill=(0, 0, 0))
 
-                draw.text((x_loc, y_loc), text, font=font, fill=(0, 0, 0))
-                draw.text(
-                    (int(x_loc * 1.2), y_loc + font_size), " - " + author, font=font
-                )
 
                 img.save(out_file_path)
         except Exception as error:

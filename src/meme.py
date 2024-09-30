@@ -1,4 +1,4 @@
-"""Meme"""
+"""Meme."""
 
 import os
 import random
@@ -10,7 +10,7 @@ from QuoteEngine.ingestor import Ingestor
 
 
 def generate_meme(path=None, body=None, author=None):
-    """Generate a meme given an path and a quote"""
+    """Generate a meme given an path and a quote."""
     img = None
     quote = None
 
@@ -46,10 +46,10 @@ def generate_meme(path=None, body=None, author=None):
 
 
 def make_parser():
-    """Make Parser"""
+    """Make Parser."""
     parser = argparse.ArgumentParser(description="Meme Generator!!!")
-    parser.add_argument("--body", type=str, help="Quote Body")
-    parser.add_argument("--author", type=str, help="Quote Author")
+    parser.add_argument("--body", type=str, help="Quote Body", default='')
+    parser.add_argument("--author", type=str, help="Quote Author", default='')
     parser.add_argument("--path", type=str, help="Image Path")
     return parser
 

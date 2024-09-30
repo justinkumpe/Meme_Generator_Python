@@ -1,11 +1,9 @@
-"""Text Ingestor"""
-
+"""Text Ingestor."""
 from models.quote import QuoteModel
 from .ingestor_interface import IngestorInterface
 
-
 class TextIngestor(IngestorInterface):
-    """Text Ingestor Class"""
+    """Text Ingestor Class."""
 
     allow_extensions = [".txt"]
 
@@ -19,7 +17,6 @@ class TextIngestor(IngestorInterface):
         Returns:
             list: List of quotes from text file
         """
-
         with open(path, "r", encoding="utf-8") as file:
             lines = file.readlines()
         return [QuoteModel(*quote.strip().split(" - ")) for quote in lines]
